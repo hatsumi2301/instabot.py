@@ -1,7 +1,6 @@
-#### This project will be frozen until we will find good developers team. We stopped project development. If you want to be in developer team - email me. Use last version on your own risk. 
-
-
 # Instabot.py 🤖 🌟
+
+**This project will be frozen until we will find good developers team. We stopped project development. If you want to be in developer team - email me. Use last version on your own risk.**
 
 **Instabot.py** is an extremely light instagram bot that uses the undocumented Web API. Unlike other bots, Instabot.py does _not_ require Selenium or a WebDriver. Instead, it interacts with the API over simple HTTP Requests. It runs on most systems, including Raspberry Pi.
 
@@ -40,11 +39,10 @@ On Windows you might have to use `python` without the version (`3`) suffix. Expe
   - `instabot-py -c myconfiguration.yml` or `python3 -m instabot_py -c myconfiguration.yml`
   - `instabot-interactive` to use the legacy interactive mode (deprecated and will be removed soon)
 
-- ** Configuration  ** ⚙️
+- **Configuration** ⚙️
 
 By running `instabot-py`,  the Bot reads its configuration from instabot.config.yml in your current directory.
 you can run the bot with a different configuration `instabot-py -c myconfiguration.yml`
-
 
 - **Legacy Interactive Mode (DEPRECATED)** ⚙️
 
@@ -72,6 +70,7 @@ The `%username%.session` file stores your session with Instagram to avoid re-log
 - `python3 -m pip install git+https://github.com/instabot-py/instabot.py`
 
 ## Parameters
+
 | Parameter            | Type|                Description                           |        Default value             |
 |:--------------------:|:---:|:----------------------------------------------------:|:--------------------------------:|
 | login                | str | Your instagram username                              |      |
@@ -88,7 +87,7 @@ The `%username%.session` file stores your session with Instagram to avoid re-log
 | media_min_like       | int | Minimum number of likes on photos to like (set to 0 to disable) | 0    |
 | follow_per_day       | int | DEPRECATED, WILL BE REMOVED SOON, REPLACED BY follow_per_run                              | 0    |
 | follow_per_run       | int | Users to follow per day                              | 0    |
-| follow_time          | int | Seconds to wait before unfollowing                   | 5 * 60 * 60 |
+| follow_time          | int | Seconds to wait before unfollowing                   | 5 \* 60 \* 60 |
 | user_min_follow      | int | Check user before following them if they have X minimum of followers. Set 0 to disable                   | 0 |
 | user_max_follow      | int | Check user before following them if they have X maximum of followers. Set 0 to disable                   | 0 |
 | follow_time_enabled  | bool| REMOVED, TO DISBALE Follow_time, just set it to 0  | -- |
@@ -97,10 +96,10 @@ The `%username%.session` file stores your session with Instagram to avoid re-log
 | unfollow_recent_feed | bool| If enabled, will populate database with users from recent feed and unfollow if they meet the conditions. Disable if you only want the bot to unfollow people it has previously followed. | True |
 | unlike_per_day     | int | DEPRECATED, WILL BE REMOVED SOON, REPLACED BY unlike_per_run                          | 0    |
 | unlike_per_run     | int | Number of media to unlike that the bot has previously liked. Set to 0 to disable.                           | 0    |
-| time_till_unlike     | int | How long to wait after liking media before unliking them. | 3 * 24 * 60 * 60 (3 days) |
+| time_till_unlike     | int | How long to wait after liking media before unliking them. | 3 \* 24 \* 60 \* 60 (3 days) |
 | comments_per_day     | int | Comments to post per day                             | 0    |
 | comment_list         | [[str]] | List of word lists for comment generation. @username@ will be replaced by the media owner's username     | [['this', 'your'], ['photo', 'picture', 'pic', 'shot'], ['is', 'looks', 'is really'], ['great', 'super', 'good'], ['.', '...', '!', '!!']] |
-| tag_list             | [str] | Tags to use for finding posts by hasthag or location(l:locationid from e.g. https://www.instagram.com/explore/locations/212999109/los-angeles-california/)                     | ['cat', 'car', 'dog', 'l:212999109'] |
+| tag_list             | [str] | Tags to use for finding posts by hasthag or [location](https://www.instagram.com/explore/locations/212999109/los-angeles-california/)                     | ['cat', 'car', 'dog', 'l:212999109'] |
 | keywords             | [str] | Words to use for finding profiles with username or biography contain these words | [] |
 | tag_blacklist        | [str] | Tags to ignore when liking posts                   | [] |
 | user_blacklist       | {str: str} | Users whose posts to ignore. Example: `{"username": "", "username2": ""}` type only the key and leave value empty -- it will be populated with userids on startup.                | {} |
@@ -116,23 +115,25 @@ The `%username%.session` file stores your session with Instagram to avoid re-log
 | unfollow_everyone  | bool | Unfollow Condition: Will unfollow everyone in unfollow queue (wildcard condition) | False |
 
 ## Contributing
+
 Please feel free to contribute and submit PR requests. All help is appreciated. Look for issues with the label [needs help](https://github.com/instabot-py/instabot.py/labels/needs%20help).
 
 ## Instabot with yaml config
+
 By default, instabot looks for configuration file (instabot.config.yml)
 it could be changed by exporting environment varibale with the full path
-````bash
+
+```bash
 export INSTABOT_CONFIG_FILE=instabot2.config.yml
-````
+```
 
-
-````yaml
+```yaml
 
 ---
 login : "username"
 password : "password"
 debug: 1
-#Send INFO notification to Telegram channel 
+#Send INFO notification to Telegram channel
 logging.handlers.telegram:
   level: INFO
   class: telegram_handler.TelegramHandler
@@ -145,12 +146,10 @@ logging.loggers.InstaBot.handlers:
 follow_time: 1200
 unfollow_per_day: 1000
 follow_per_day: 1000
-
-````
+```
 
 [Create Telegram bot for instabot](https://core.telegram.org/bots#3-how-do-i-create-a-bot)
 
 ## Community
 
 - [Telegram Group](https://t.me/joinchat/DYKH-0G_8hsDDoN_iE8ZlA)
-
